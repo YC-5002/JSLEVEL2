@@ -14,21 +14,41 @@
     <script>
         function initialize(){
             halloweenText = document.getElementById("colordiv");
+
+            fore = "black";
+            back = "orange";
+
+            textWidth = 100;
         }
         function toggleColor(){
             var tmp = fore;
             fore = back;
             back = tmp;
+
+            display();
+        }
+        function display(){
+            halloweenText.style.color = fore;
+            halloweenText.style.backgroundColor = back;
+            halloweenText.style.width = textWidth + "%";
+        }
+        function changeWidth(w){
+            textWidth = w;
+            display();
         }
     </script>
 </head>
 <body onload="initialize();">
     <div id="colordiv">
-        Click th button to switch me from black to orange and 
+        Click the button to switch me from black to orange and 
         back again and again. Happy Halloween.
     </div>
     <p>
-        <button>Toggle Colors</button>
+        <button onclick = "toggleColor();">Toggle Colors</button>
+        <button onclick = "changeWidth(25);">25% width</button>
+        <button onclick = "changeWidth(50);">50% width</button>
+        <button onclick = "changeWidth(75);">75% width</button>
+        <button onclick = "changeWidth(100);">100% width</button>
     </p>
 
 </body>
