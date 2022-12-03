@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            font:24pt arial;
+            color:blue;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function initialize(){
+            visitsOut = document.getElementById("visits");
+
+            if(!sessionStorage.numVisits)
+                sessionStorage.numVisits = 0;
+            else
+                sessionStorage.numVisits++;
+            display();
+        }
+
+        function display(){
+            visitsOut.innerHTML = sessionStorage.numVisits;
+        }
+    </script>
+</head>
+<body onload = "initialize();">
+    <h1>This is my home page</h1>
+    <h2>I have visited here <span id = "visits"></span> times.</span></h2>
+    <a href = "destination.html">Link to Destination Page</a><br /><br />
+    <a href = "http://google.com" target = "_blank">Link to Google</a>
+</body>
+</html>
